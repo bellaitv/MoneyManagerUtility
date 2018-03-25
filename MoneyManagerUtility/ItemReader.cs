@@ -14,7 +14,7 @@ namespace MoneyManagerUtility
         //todo creating folder structure
         private String INI_FILE_PATH = String.Format("{0}{1}{2}", Environment.CurrentDirectory, StringResources.CONFIG_FOLDER_PATH, StringResources.INI_FILE_NAME);
 
-        private INIFile file;
+        public INIFile File { get; private set; }
 
         public ItemReader()
         {
@@ -24,13 +24,13 @@ namespace MoneyManagerUtility
         private void InitFile()
         {
             //todo read config file, or ini file
-            file = new INIFile(INI_FILE_PATH);
-            file.Read();
+            File = new INIFile(INI_FILE_PATH);
+            File.Read();
         }
 
         public bool IsCategory(String value)
         {
-            return file.ISCategory(value);
+            return File.ISCategory(value);
         }
     }
 }

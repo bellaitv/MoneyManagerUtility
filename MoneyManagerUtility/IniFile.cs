@@ -28,6 +28,7 @@ namespace MoneyManagerUtility
         {
             String[] lines = File.ReadAllLines(path);
             String actualSection = String.Empty;
+            int itemssSum = 0;
             for (int i = 0; i < lines.Length - 1; i++)
             {
                 String line = lines[i];
@@ -53,8 +54,9 @@ namespace MoneyManagerUtility
                         {
                             String[] splittedLine = line.Split('=');
                             //todo description not [1]
-                            Item actual = new Item() { Category = categories[0], Value = splittedLine[1], Description = splittedLine[1] };
+                            Item actual = new Item() { Category = categories[itemssSum],Value = splittedLine[1], Description = splittedLine[1] };
                             items.Add(actual);
+                            itemssSum++;
                             break;
                         }
                     default:
@@ -73,6 +75,14 @@ namespace MoneyManagerUtility
                 if (actualItem.Title.Equals(value))
                     return true;
             return false;
+        }
+
+        public List<Item> GetItems() {
+            return items;
+        }
+
+        public List<ItemCategory> GetCategories() {
+            return categories;
         }
     }
 }

@@ -17,8 +17,8 @@
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
-        <Label Content="Type"  Grid.Row="0" Grid.Column="0"></Label>
-        <ComboBox Grid.Row="0" Grid.Column="1"/>
+        <Label Content="Category"  Grid.Row="0" Grid.Column="0"></Label>
+        <ComboBox Grid.Row="0" Grid.Column="1" Name="ComboboxCategories"/>
         <Label Content="Amount" Grid.Row="1" Grid.Column="0"/>
         <TextBlock Grid.Row="1" Grid.Column="1"/>
         <Label Grid.Row="2" Grid.Column="0" Content="Comment" />

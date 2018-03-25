@@ -22,6 +22,17 @@ namespace MoneyManagerUtility
         public DialogSetShoppingItem()
         {
             InitializeComponent();
+            SetCategiies();
+        }
+
+        private void SetCategiies()
+        {
+            ItemReader reader = new ItemReader();
+            List<Item> items = reader.File.GetItems();
+            foreach (Item item in items) {
+                ComboBoxItem comboItem = new ComboBoxItem() { Content = item.Category.Title };
+                ComboboxCategories.Items.Add(comboItem);
+            }
         }
 
         private void ApplySetMonths_Click(object sender, RoutedEventArgs e)
