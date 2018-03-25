@@ -17,9 +17,9 @@ namespace MoneyManagerUtility
     /// <summary>
     /// Interaction logic for DialogSetMonths.xaml
     /// </summary>
-    public partial class DialogSetMonths : Window
+    public partial class DialogSetShoppingItem : Window
     {
-        public DialogSetMonths()
+        public DialogSetShoppingItem()
         {
             InitializeComponent();
         }
@@ -32,6 +32,11 @@ namespace MoneyManagerUtility
         private void CalcelSetMonths_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void Calendar_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="DialogNew" Height="300" Width="300">
 
-    <Grid Height="200" Width="100">
+    <Grid Height="250" Width="250">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
-            <RowDefinition Height="3*" />
-            <RowDefinition Height="3*" />
+            <RowDefinition Height="7*" />
+            <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -22,15 +22,24 @@
         <Label Content="Year" Grid.Column="0" Grid.Row="0" Height="30" Width="40" />
         <ComboBox Name="ComboBoxYear" Grid.Row="0" Grid.Column="1" Height="20" Width="50"  SelectionChanged="SelectionChangedYearNew"/>
 
-        <!--<Label Content="Year" Grid.Column="0" Grid.Row="0" Margin="0,-4,-0.4,4.4" />
-        <ComboBox Name="ComboBoxYear" Grid.Row="0" Grid.ColumnSpan="2" Margin="147,-4,-0.4,4" />-->
-
-        <Button Content="Set months" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Click="SetMonts_Click" Height="20"/>
+        <Calendar Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Height="150" Width="150" MouseDoubleClick="Calendar_MouseDoubleClick"/>
 
         <!--<Separator Grid.Row="2" Grid.Column="0" Height="10" Background="Black"/>-->
         <!--<Rectangle HorizontalAlignment="Stretch" Fill="Blue" Height="4" Grid.Column="0" Grid.Row="2"/>-->
-        <Button Content="Create" Click="CreateNew_Click" Grid.Row="3" Grid.Column="0" Height="20"/>
-        <Button Content="Cancel" Click="CancelNew_Click" Grid.Row="3" Grid.Column="1" Height="20" />
 
+        <StackPanel Grid.Row="3" Grid.Column="0" HorizontalAlignment="Stretch">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Button Content="Create" Click="CreateNew_Click" Grid.Row="1" Grid.Column="0" Height="20"/>
+                <Button Content="Cancel" Click="CancelNew_Click" Grid.Row="1" Grid.Column="1" Height="20" />
+            </Grid>
+        </StackPanel>
     </Grid>
 </Window>

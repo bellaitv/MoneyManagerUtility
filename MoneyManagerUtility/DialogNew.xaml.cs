@@ -42,7 +42,7 @@ namespace MoneyManagerUtility
 
         private void SetMonts_Click(object sender, RoutedEventArgs e)
         {
-            DialogSetMonths dialog = new DialogSetMonths();
+            DialogSetShoppingItem dialog = new DialogSetShoppingItem();
             dialog.ShowDialog();
         }
 
@@ -63,6 +63,12 @@ namespace MoneyManagerUtility
                 return;
             string text = (e.AddedItems[0] as ComboBoxItem).Content as string;
             combobox.Text = text;
+        }
+
+        private void Calendar_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            DialogSetShoppingItem dialog = new DialogSetShoppingItem();
+            dialog.ShowDialog();
         }
     }
 }
