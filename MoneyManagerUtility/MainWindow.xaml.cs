@@ -28,6 +28,8 @@ namespace MoneyManagerUtility
         private ImportChecker checker;
         private SaveFileManager saveFileManager;
         private TreeNode head;
+
+        private ItemReader reader = new ItemReader();
         public MainWindow()
         {
             InitializeComponent();
@@ -131,7 +133,7 @@ namespace MoneyManagerUtility
         public void Import_TXT(String testimportfile)
         {
             //string testimportfile = @"c:\docs\kiadások2.txt";
-            FileImporter impoerter = new TXTFileImporter(testimportfile);
+            FileImporter impoerter = new TXTFileImporter(testimportfile, reader);
             impoerter.Import();
             head = impoerter.GetHead();
             SetTree(head);
@@ -188,7 +190,7 @@ namespace MoneyManagerUtility
 
         private void Import_XML(string openFile)
         {
-            FileImporter impoerter = new XLMFileImporter(openFile);
+            FileImporter impoerter = new XLMFileImporter(openFile, reader);
             impoerter.Import();
             head = impoerter.GetHead();
             SetTree(head);
@@ -196,7 +198,7 @@ namespace MoneyManagerUtility
 
         private void New_Click(object sender, RoutedEventArgs e)
         {
-            DialogNew newDialog = new DialogNew();
+            DialogNew newDialog = new DialogNew(reader);
             newDialog.ShowDialog();
         }
 

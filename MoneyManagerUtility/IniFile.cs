@@ -54,13 +54,13 @@ namespace MoneyManagerUtility
                         {
                             String[] splittedLine = line.Split('=');
                             //todo description not [1]
-                            Item actual = new Item() { Category = categories[itemssSum],Value = splittedLine[1], Description = splittedLine[1] };
+                            Item actual = new Item() { Category = new ItemCategory() { Title = splittedLine[0], Description = splittedLine[0] }, Value = splittedLine[1], Description = splittedLine[1] };
                             items.Add(actual);
                             itemssSum++;
                             break;
                         }
                     default:
-                        { //todo errorMsg or ignore
+                        {   //todo errorMsg or ignore
                             break;
                         }
                 }
@@ -77,11 +77,13 @@ namespace MoneyManagerUtility
             return false;
         }
 
-        public List<Item> GetItems() {
+        public List<Item> GetItems()
+        {
             return items;
         }
 
-        public List<ItemCategory> GetCategories() {
+        public List<ItemCategory> GetCategories()
+        {
             return categories;
         }
     }

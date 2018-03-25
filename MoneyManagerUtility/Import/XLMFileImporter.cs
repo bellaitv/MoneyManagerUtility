@@ -13,8 +13,9 @@ namespace MoneyManagerUtility.Import
 
         private String filePath;
 
-        public XLMFileImporter(String filePath)
+        public XLMFileImporter(String filePath, ItemReader reader) : base(reader)
         {
+            this.reader = reader;
             this.filePath = filePath;
             head = new TreeNode() { children = new List<TreeNode>() };
         }

@@ -13,7 +13,11 @@ namespace MoneyManagerUtility.Import
         //Head is always a year
         protected TreeNode head;
         protected TreeNode lastMonth, lastDay;
-        protected ItemReader reader = new ItemReader();
+        protected ItemReader reader;
+
+        public FileImporter(ItemReader reader) {
+            this.reader = reader;
+        }
 
         public abstract void Import();
 

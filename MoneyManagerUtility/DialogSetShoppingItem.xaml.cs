@@ -19,17 +19,30 @@ namespace MoneyManagerUtility
     /// </summary>
     public partial class DialogSetShoppingItem : Window
     {
-        public DialogSetShoppingItem()
+
+        private NodeItem item;
+        private ItemReader reader;
+
+        public DialogSetShoppingItem(ItemReader reader)
         {
             InitializeComponent();
+            this.reader = reader;
+            SetCategiies();
+        }
+
+        public DialogSetShoppingItem(NodeItem item, ItemReader reader)
+        {
+            InitializeComponent();
+            this.item = item;
+            this.reader = reader;
             SetCategiies();
         }
 
         private void SetCategiies()
         {
-            ItemReader reader = new ItemReader();
             List<Item> items = reader.File.GetItems();
-            foreach (Item item in items) {
+            foreach (Item item in items)
+            {
                 ComboBoxItem comboItem = new ComboBoxItem() { Content = item.Category.Title };
                 ComboboxCategories.Items.Add(comboItem);
             }
@@ -37,7 +50,9 @@ namespace MoneyManagerUtility
 
         private void ApplySetMonths_Click(object sender, RoutedEventArgs e)
         {
-
+            //item.title a hívó osztályba lesz kitöltve, az lesz a évhónapnap
+            item.Value = String.Format("{0} {1}", ComboboxCategories.SelectedValue.ToString(), TextBoxAmount.Text.ToString());
+            item.Description = TextBoxComment.Text.ToString();
         }
 
         private void CalcelSetMonths_Click(object sender, RoutedEventArgs e)

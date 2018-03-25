@@ -19,3 +19,4 @@ C:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\obj\Debug\MoneyManagerU
 C:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\obj\Debug\MoneyManagerUtility.csproj.CoreCompileInputs.cache
 C:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\obj\Debug\MoneyManagerUtility.exe
 C:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\obj\Debug\MoneyManagerUtility.pdb
+C:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\obj\Debug\MoneyManagerUtility.csprojResolveAssemblyReference.cache

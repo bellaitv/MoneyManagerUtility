@@ -20,9 +20,9 @@
         <Label Content="Category"  Grid.Row="0" Grid.Column="0"></Label>
         <ComboBox Grid.Row="0" Grid.Column="1" Name="ComboboxCategories"/>
         <Label Content="Amount" Grid.Row="1" Grid.Column="0"/>
-        <TextBlock Grid.Row="1" Grid.Column="1"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Name="TextBoxAmount" />
         <Label Grid.Row="2" Grid.Column="0" Content="Comment" />
-        <TextBlock Grid.Row="1" Grid.Column="1"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Name="TextBoxComment" />
         <StackPanel Grid.Row="3" Grid.Column="0" HorizontalAlignment="Stretch">
             <Grid>
                 <Grid.RowDefinitions>

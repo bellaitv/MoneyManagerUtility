@@ -5,12 +5,12 @@ using System.IO;
 namespace MoneyManagerUtility.Import
 {
     public class TXTFileImporter : FileImporter
-    { 
+    {
         public String Title { get; private set; }
 
         public String error { get; private set; }
 
-        public TXTFileImporter(String filePath)
+        public TXTFileImporter(String filePath, ItemReader reader) : base(reader)
         {
             lines = File.ReadAllLines(filePath);
             head = new TreeNode();

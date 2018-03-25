@@ -23,10 +23,12 @@ namespace MoneyManagerUtility
 
         //Maybe unneeded
         private List<ComboBoxItem> years = new List<ComboBoxItem>();
+        private ItemReader reader;
 
-        public DialogNew()
+        public DialogNew(ItemReader reader)
         {
             InitializeComponent();
+            this.reader = reader;
             SetYearComboBox();
         }
 
@@ -38,12 +40,6 @@ namespace MoneyManagerUtility
                 years.Add(year);
                 ComboBoxYear.Items.Add(year);
             }
-        }
-
-        private void SetMonts_Click(object sender, RoutedEventArgs e)
-        {
-            DialogSetShoppingItem dialog = new DialogSetShoppingItem();
-            dialog.ShowDialog();
         }
 
         private void CreateNew_Click(object sender, RoutedEventArgs e)
@@ -67,7 +63,8 @@ namespace MoneyManagerUtility
 
         private void Calendar_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            DialogSetShoppingItem dialog = new DialogSetShoppingItem();
+            NodeItem item = new NodeItem(reader);
+            DialogSetShoppingItem dialog = new DialogSetShoppingItem(item, reader);
             dialog.ShowDialog();
         }
     }
