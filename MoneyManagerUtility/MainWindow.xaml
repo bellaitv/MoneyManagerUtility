@@ -1,0 +1,46 @@
+﻿<Window x:Class="MoneyManagerUtility.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MoneyManagerUtility"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid Margin="0,23,0.4,-23.2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Menu Margin="0,11,0.4,-11.2" Grid.Column="0" Grid.Row="0" Height="20">
+            <MenuItem Header="File">
+                <MenuItem Header="New" Click="New_Click" Margin="0,0,0.4,0"/>
+                <MenuItem Header="Save" Click="Save_Click" Margin="0,0,0.4,0"/>
+                <Separator/>
+                <MenuItem Header="Exit" Click="Exit_Click" Margin="0,0,0.4,0"/>
+            </MenuItem>
+            <MenuItem Header="Import">
+                <MenuItem Header="TXT File" Click="TXTImport_Click" Margin="0,0,0.4,0" />
+                <MenuItem Header="XML File" Click="XMLImport_Click" Margin="0,0,0.4,0" />
+                <Separator />
+                <MenuItem Header="_TBC..." />
+                <Separator />
+                <MenuItem Header="_TBC..." />
+                <MenuItem Header="_TBC..." />
+                <Separator />
+                <MenuItem Header="_TBC..." />
+            </MenuItem>
+
+
+        </Menu>
+        <!--<Grid>-->
+        <TreeView Grid.Column="0" Grid.Row="1">
+            <TreeViewItem Header="" Name="TreeItemViewMain" IsExpanded="True">
+
+            </TreeViewItem>
+        </TreeView>
+        <!--</Grid>-->
+    </Grid>
+</Window>

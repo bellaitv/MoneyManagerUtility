@@ -1,0 +1,36 @@
+﻿<Window x:Class="MoneyManagerUtility.DialogNew"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MoneyManagerUtility"
+        mc:Ignorable="d"
+        Title="DialogNew" Height="300" Width="300">
+
+    <Grid Height="200" Width="100">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Year" Grid.Column="0" Grid.Row="0" Height="30" Width="40" />
+        <ComboBox Name="ComboBoxYear" Grid.Row="0" Grid.Column="1" Height="20" Width="50"  SelectionChanged="SelectionChangedYearNew"/>
+
+        <!--<Label Content="Year" Grid.Column="0" Grid.Row="0" Margin="0,-4,-0.4,4.4" />
+        <ComboBox Name="ComboBoxYear" Grid.Row="0" Grid.ColumnSpan="2" Margin="147,-4,-0.4,4" />-->
+
+        <Button Content="Set months" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Click="SetMonts_Click" Height="20"/>
+
+        <!--<Separator Grid.Row="2" Grid.Column="0" Height="10" Background="Black"/>-->
+        <!--<Rectangle HorizontalAlignment="Stretch" Fill="Blue" Height="4" Grid.Column="0" Grid.Row="2"/>-->
+        <Button Content="Create" Click="CreateNew_Click" Grid.Row="3" Grid.Column="0" Height="20"/>
+        <Button Content="Cancel" Click="CancelNew_Click" Grid.Row="3" Grid.Column="1" Height="20" />
+
+    </Grid>
+</Window>

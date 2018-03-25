@@ -1,0 +1,16 @@
+﻿<year value="2017">
+  <month value="03">
+    <day value="05">
+      <shoppin_item  category ="loans" value="￡600" description="from pinty"/>
+    </day>
+    <day value="06">
+      <shoppin_item  category ="oyster" value="￡40" description="from pinty"/>
+    </day>
+    <day value="07">
+      <shoppin_item  category ="aliexpress" value="￡17,79" description="from pinty"/>
+    </day>
+    <day value="08">
+      <shoppin_item  category ="others" value="￡20" description="from pinty"/>
+    </day>
+  </month>
+</year>
