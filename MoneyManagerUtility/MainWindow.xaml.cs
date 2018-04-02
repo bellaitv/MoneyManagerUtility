@@ -33,7 +33,7 @@ namespace MoneyManagerUtility
 
         private void Load()
         {
-            String[] files = Directory.GetFiles(String.Format("{0}{1}", Environment.CurrentDirectory, StringResources.CONFIG_FOLDER_PATH));
+            String[] files = Directory.GetFiles(String.Format("{0}{1}", Environment.CurrentDirectory, StringResources.SAVE_FOLDER_PATH));
             String openFile = null;
             foreach (String file in files)
                 if (file.ToUpper().EndsWith("XML"))
@@ -105,9 +105,10 @@ namespace MoneyManagerUtility
             if (node == null)
                 return;
             DialogModifyItem dialog = new DialogModifyItem(node, reader);
-            dialog.Show();
-            ClearTheTree();
-            SetTree(head);
+            dialog.ShowDialog();
+            item.IsExpanded = true;
+            item.Header = String.Format("{0}{1}{2}", node.Title, END_TITLE_SIGN, node.Value, End_VALUE_SIGN, node.Description);
+            TreeItemViewMain.Items.Refresh();
         }
 
         private void mouseDoubleHandler_Click(object sender, MouseButtonEventArgs e)

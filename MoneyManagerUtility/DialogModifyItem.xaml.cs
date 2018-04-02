@@ -53,7 +53,6 @@ namespace MoneyManagerUtility
 
         private void InitializeValues()
         {
-
             String[] values = item.Value.Split(StringResources.asd);
             TextBoxAmount.Text = values[0];
             TextBoxComment.Text = values[1];
@@ -61,12 +60,41 @@ namespace MoneyManagerUtility
 
         private void CalcelSetMonths_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
 
         private void ApplySetMonths_Click(object sender, RoutedEventArgs e)
         {
+            if (!FormIsValid())
+                return;
+            ComboBoxItem category = (ComboBoxItem)ComboboxCategories.SelectedValue;
+            if (category == null)
+                //todo show error to user?
+                return;
+            item.Title = category.Content.ToString();
 
+            //todo MODIFY - in the imports as well
+            String value = String.Format("{0}{1}{2}", TextBoxAmount.Text.ToString(), StringResources.asd, TextBoxComment.Text.ToString());
+            item.Value = value;
+            item.Description = value;
+            Close();
+        }
+
+        private bool FormIsValid()
+        {
+            ComboBoxItem category = (ComboBoxItem)ComboboxCategories.SelectedValue;
+            if (category == null)
+            {
+                MessageBox.Show(String.Format(StringResources.ERROR_MSG_EMPTY_CONTENT, "Category"), StringResources.ERROR_MSG_TITLE);
+                return false;
+            }
+            if (String.IsNullOrEmpty(TextBoxAmount.Text.ToString()))
+            {
+
+                MessageBox.Show(String.Format(StringResources.ERROR_MSG_EMPTY_CONTENT, "Amount"), StringResources.ERROR_MSG_TITLE);
+                return false;
+            }
+            return true;
         }
     }
 }

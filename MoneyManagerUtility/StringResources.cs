@@ -54,6 +54,9 @@ namespace MoneyManagerUtility
         public const String XML_END_SIGN = "=";
         public const String XML_YEAR = "YEAR";
 
+        public const String ERROR_MSG_TITLE = "Error";
+        public const String ERROR_MSG_EMPTY_CONTENT = "The {0} field is empty";
+
         //
         public const char asd = ' ';
     }
