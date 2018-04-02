@@ -98,7 +98,28 @@ namespace MoneyManagerUtility
 
         private void AddItem_Click(object sender, MouseButtonEventArgs e)
         {
-            Console.WriteLine();
+            //parent??
+            TreeViewItem parent = ((TreeViewItem)sender);
+            TreeNode node = parent.Tag as TreeNode;
+            NodeItem nodeItem = node as NodeItem;
+            if (nodeItem != null)
+                return;
+            int day = -1;
+            TreeViewItem newItem = new TreeViewItem();
+            if (Int32.TryParse(node.Title.ToString(), out day)) {
+                //todo add new item dialog
+                DialogSetShoppingItem dialog = new DialogSetShoppingItem(reader);
+                dialog.ShowDialog();
+                NodeItem newNode = dialog.GetItem();
+                newItem.Tag = newNode;
+                newItem.Header = String.Format("{0}{1}{2}", newNode.Title, END_TITLE_SIGN, newNode.Value, End_VALUE_SIGN, newNode.Description);
+                node.children.Add(newNode);
+                parent.Items.Add(newItem);
+                TreeItemViewMain.Items.Refresh();
+            }
+            else {
+                //todo add new Day dialog
+            }
         }
 
         private void TreeNodeItem_DoubleClick(object sender, MouseButtonEventArgs e)

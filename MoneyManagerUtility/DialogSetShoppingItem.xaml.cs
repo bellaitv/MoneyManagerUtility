@@ -11,7 +11,6 @@ namespace MoneyManagerUtility
     /// </summary>
     public partial class DialogSetShoppingItem : Window
     {
-
         private NodeItem item;
         private ItemReader reader;
 
@@ -19,6 +18,7 @@ namespace MoneyManagerUtility
         {
             InitializeComponent();
             this.reader = reader;
+            item = new NodeItem(reader);
             SetCategiies();
         }
 
@@ -38,6 +38,10 @@ namespace MoneyManagerUtility
                 ComboBoxItem comboItem = new ComboBoxItem() { Content = item.Category.Title };
                 ComboboxCategories.Items.Add(comboItem);
             }
+        }
+
+        public NodeItem GetItem() {
+            return item;
         }
 
         private void ApplySetMonths_Click(object sender, RoutedEventArgs e)
