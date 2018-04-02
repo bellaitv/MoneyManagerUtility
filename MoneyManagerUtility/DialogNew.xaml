@@ -10,7 +10,6 @@
     <Grid Height="250" Width="250">
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
             <RowDefinition Height="7*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
@@ -19,15 +18,12 @@
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
 
-        <Label Content="Year" Grid.Column="0" Grid.Row="0" Height="30" Width="40" />
-        <ComboBox Name="ComboBoxYear" Grid.Row="0" Grid.Column="1" Height="20" Width="50"  SelectionChanged="SelectionChangedYearNew"/>
-
-        <Calendar Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Height="150" Width="150" MouseDoubleClick="Calendar_MouseDoubleClick"/>
+        <Calendar Name="Calendar_New_Item" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Height="150" Width="150" MouseDoubleClick="Calendar_MouseDoubleClick"/>
 
         <!--<Separator Grid.Row="2" Grid.Column="0" Height="10" Background="Black"/>-->
         <!--<Rectangle HorizontalAlignment="Stretch" Fill="Blue" Height="4" Grid.Column="0" Grid.Row="2"/>-->
 
-        <StackPanel Grid.Row="3" Grid.Column="0" HorizontalAlignment="Stretch">
+        <StackPanel Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="6*" />

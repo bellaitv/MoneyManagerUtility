@@ -1,16 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MoneyManagerUtility
 {
@@ -51,8 +43,14 @@ namespace MoneyManagerUtility
         private void ApplySetMonths_Click(object sender, RoutedEventArgs e)
         {
             //item.title a hívó osztályba lesz kitöltve, az lesz a évhónapnap
-            item.Value = String.Format("{0} {1}", ComboboxCategories.SelectedValue.ToString(), TextBoxAmount.Text.ToString());
-            item.Description = TextBoxComment.Text.ToString();
+            ComboBoxItem category = (ComboBoxItem)ComboboxCategories.SelectedValue;
+            item.Title = category.Content.ToString();
+
+            //todo MODIFY - in the imports as well
+            String value = String.Format("{0} {1}", TextBoxAmount.Text.ToString(), TextBoxComment.Text.ToString());
+            item.Value = value;
+            item.Description = value;
+            Close();
         }
 
         private void CalcelSetMonths_Click(object sender, RoutedEventArgs e)

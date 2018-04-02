@@ -1,17 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using MoneyManagerUtility.Import;
 using System.IO;
 
@@ -59,7 +51,7 @@ namespace MoneyManagerUtility
             //todo
         }
 
-        private void SetTree(TreeNode treeNode)
+        public void SetTree(TreeNode treeNode)
         {
             TreeItemViewMain.Header = treeNode.Title;
             if (treeNode.children != null)
@@ -125,7 +117,7 @@ namespace MoneyManagerUtility
                 // Open document 
                 string filename = dlg.FileName;
                 checker.IsValidTXTFile(filename);
-                TreeItemViewMain.Items.Clear();
+                ClearTheTree();
                 Import_TXT(filename);
             }
         }
@@ -183,9 +175,14 @@ namespace MoneyManagerUtility
                 // Open document 
                 string filename = dlg.FileName;
                 checker.IsValidXMLFile(filename);
-                TreeItemViewMain.Items.Clear();
+                ClearTheTree();
                 Import_XML(filename);
             }
+        }
+
+        public void ClearTheTree()
+        {
+            TreeItemViewMain.Items.Clear();
         }
 
         private void Import_XML(string openFile)
@@ -198,13 +195,17 @@ namespace MoneyManagerUtility
 
         private void New_Click(object sender, RoutedEventArgs e)
         {
-            DialogNew newDialog = new DialogNew(reader);
+            DialogNew newDialog = new DialogNew(reader, this);
             newDialog.ShowDialog();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        public void SetHead(TreeNode head) {
+            this.head = head;
         }
     }
 }

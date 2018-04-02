@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("2017.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("todo.txt")]
 
 

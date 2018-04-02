@@ -19,5 +19,9 @@ namespace MoneyManagerUtility
         {
             return (month >= 1 && month <= 12);
         }
+
+        public static String GetMonth(int index) {
+            return months[index];
+        }
     }
 }
