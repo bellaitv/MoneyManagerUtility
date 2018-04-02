@@ -90,7 +90,6 @@ namespace MoneyManagerUtility
             }
             if (String.IsNullOrEmpty(TextBoxAmount.Text.ToString()))
             {
-
                 MessageBox.Show(String.Format(StringResources.ERROR_MSG_EMPTY_CONTENT, "Amount"), StringResources.ERROR_MSG_TITLE);
                 return false;
             }
