@@ -47,7 +47,7 @@ namespace MoneyManagerUtility
             item.Title = category.Content.ToString();
 
             //todo MODIFY - in the imports as well
-            String value = String.Format("{0} {1}", TextBoxAmount.Text.ToString(), TextBoxComment.Text.ToString());
+            String value = String.Format("{0}{1}{2}", TextBoxAmount.Text.ToString(),StringResources.asd, TextBoxComment.Text.ToString());
             item.Value = value;
             item.Description = value;
             Close();

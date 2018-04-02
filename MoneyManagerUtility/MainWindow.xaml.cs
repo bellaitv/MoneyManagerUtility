@@ -81,6 +81,7 @@ namespace MoneyManagerUtility
                     header = String.Format("{0}{1}{2}", nodeItem.Title, END_TITLE_SIGN, nodeItem.Value, End_VALUE_SIGN, nodeItem.Description);
 
                 TreeViewItem item = new TreeViewItem() { Header = header, IsExpanded = true };
+                item.MouseDoubleClick += TreeNodeItem_DoubleClick;
                 item.MouseDoubleClick += mouseDoubleHandler_Click;
                 parent.Items.Add(item);
                 item.Tag = actual;
@@ -93,6 +94,20 @@ namespace MoneyManagerUtility
                     separatorItem.Tag = actual;
                 }
             }
+        }
+
+        private void TreeNodeItem_DoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            TreeViewItem item = sender as TreeViewItem;
+            if (item == null)
+                return;
+            NodeItem node = item.Tag as NodeItem;
+            if (node == null)
+                return;
+            DialogModifyItem dialog = new DialogModifyItem(node, reader);
+            dialog.Show();
+            ClearTheTree();
+            SetTree(head);
         }
 
         private void mouseDoubleHandler_Click(object sender, MouseButtonEventArgs e)

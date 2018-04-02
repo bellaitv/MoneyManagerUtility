@@ -57,6 +57,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DialogModifyItem.xaml.cs">
+      <DependentUpon>DialogModifyItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DialogNew.xaml.cs">
       <DependentUpon>DialogNew.xaml</DependentUpon>
     </Compile>
@@ -75,6 +78,10 @@
     <Compile Include="StringResources.cs" />
     <Compile Include="TreeNode.cs" />
     <Compile Include="SaveFileManager.cs" />
+    <Page Include="DialogModifyItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DialogNew.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

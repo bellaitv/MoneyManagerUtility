@@ -1,2 +1,5 @@
-﻿modify config menu item
+﻿Modify items
+modify config menu item
 checkbox on new dialog
+--------
+do the "todo"s

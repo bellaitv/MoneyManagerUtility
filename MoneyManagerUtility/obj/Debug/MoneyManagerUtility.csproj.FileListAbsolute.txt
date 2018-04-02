@@ -20,3 +20,5 @@ C:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\obj\Debug\MoneyManagerU
 C:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\obj\Debug\MoneyManagerUtility.exe
 C:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\obj\Debug\MoneyManagerUtility.pdb
 C:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\obj\Debug\MoneyManagerUtility.csprojResolveAssemblyReference.cache
+C:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\obj\Debug\DialogModifyItem.g.cs
+C:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\obj\Debug\DialogModifyItem.baml

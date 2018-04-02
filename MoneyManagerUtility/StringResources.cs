@@ -53,5 +53,8 @@ namespace MoneyManagerUtility
         public const String XML_SEPARATOR_DAILY_LIST_END = "-------------------------------------------------------------";
         public const String XML_END_SIGN = "=";
         public const String XML_YEAR = "YEAR";
+
+        //
+        public const char asd = ' ';
     }
 }
