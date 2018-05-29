@@ -1,5 +1,7 @@
-﻿Modify items
-modify config menu item
-checkbox on new dialog
+﻿Add new on r-click is not working
+DialogFactory? Does it make sense?
+Encrypt the txt files
+new -> sub menu, new costs //that whill be the existing func
+new -> sub menu, new costs //new loans, TBC
 --------
 do the "todo"s

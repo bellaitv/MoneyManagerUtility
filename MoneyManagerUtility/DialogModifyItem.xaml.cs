@@ -56,6 +56,14 @@ namespace MoneyManagerUtility
             String[] values = item.Value.Split(StringResources.asd);
             TextBoxAmount.Text = values[0];
             TextBoxComment.Text = values[1];
+            
+            foreach (ComboBoxItem actual in ComboboxCategories.Items) {
+                if (actual.Content.Equals(item.Title))
+                {
+                    ComboboxCategories.SelectedValue = actual;
+                    return;
+                }
+            }
         }
 
         private void CalcelSetMonths_Click(object sender, RoutedEventArgs e)
