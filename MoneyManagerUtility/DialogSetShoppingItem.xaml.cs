@@ -47,6 +47,7 @@ namespace MoneyManagerUtility
         private void ApplySetMonths_Click(object sender, RoutedEventArgs e)
         {
             //item.title a hívó osztályba lesz kitöltve, az lesz a évhónapnap
+            //todo check if someone is empty
             ComboBoxItem category = (ComboBoxItem)ComboboxCategories.SelectedValue;
             item.Title = category.Content.ToString();
 

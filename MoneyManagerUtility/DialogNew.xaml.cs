@@ -90,7 +90,8 @@ namespace MoneyManagerUtility
 
         private TreeNode GetMonth(int month)
         {
-            String actualMonthString = Months.GetMonth(month);
+            //month -1 because january is 0
+            String actualMonthString = Months.GetMonth(month - 1);
             TreeNode result = new TreeNode() { Title = actualMonthString, children = new List<TreeNode>() };
             foreach (TreeNode actualMonth in months)
                 if (actualMonth != null && actualMonth.Title.Equals(actualMonthString))

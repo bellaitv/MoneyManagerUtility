@@ -106,18 +106,23 @@ namespace MoneyManagerUtility
                 return;
             int day = -1;
             TreeViewItem newItem = new TreeViewItem();
-            if (Int32.TryParse(node.Title.ToString(), out day)) {
+            if (Int32.TryParse(node.Title.ToString(), out day))
+            {
                 //todo add new item dialog
                 DialogSetShoppingItem dialog = new DialogSetShoppingItem(reader);
-                dialog.ShowDialog();
-                NodeItem newNode = dialog.GetItem();
-                newItem.Tag = newNode;
-                newItem.Header = String.Format("{0}{1}{2}", newNode.Title, END_TITLE_SIGN, newNode.Value, End_VALUE_SIGN, newNode.Description);
-                node.children.Add(newNode);
-                parent.Items.Add(newItem);
-                TreeItemViewMain.Items.Refresh();
+                Nullable<bool> result = dialog.ShowDialog();
+                if (result == true)
+                {
+                    NodeItem newNode = dialog.GetItem();
+                    newItem.Tag = newNode;
+                    newItem.Header = String.Format("{0}{1}{2}", newNode.Title, END_TITLE_SIGN, newNode.Value, End_VALUE_SIGN, newNode.Description);
+                    node.children.Add(newNode);
+                    parent.Items.Add(newItem);
+                    TreeItemViewMain.Items.Refresh();
+                }
             }
-            else {
+            else
+            {
                 //todo add new Day dialog
             }
         }
@@ -235,8 +240,45 @@ namespace MoneyManagerUtility
             Environment.Exit(0);
         }
 
-        public void SetHead(TreeNode head) {
-            this.head = head;
+        public void SetHead(TreeNode head)
+        {
+            if (head.children.Count == 0)
+            {
+                this.head = head;
+                return;
+            }
+            if (!this.head.Title.Equals(head.Title))
+                throw new Exception("The node and the head is not the some year.");
+            MessageBoxResult canAddToHead = AskUserToAddHead();
+            switch (canAddToHead)
+            {
+                case MessageBoxResult.Yes:
+                    //todo when a tree to another it has to add the not existing months and has to add the not existing days to the existing motnhs
+                    //consider: what if a day is existing
+                    this.head.AddChildren(head.children);
+                    break;
+
+                case MessageBoxResult.No:
+                    this.head = head;
+                    break;
+
+                case MessageBoxResult.Cancel:
+                    /* ... */
+                    break;
+            }
+
+            this.head.AddChildren(head.children);
+        }
+
+        public MessageBoxResult AskUserToAddHead()
+        {
+            string sMessageBoxText = "Do you want to continue?";
+            string sCaption = "My Test Application";
+
+            MessageBoxButton btnMessageBox = MessageBoxButton.YesNoCancel;
+            MessageBoxImage icnMessageBox = MessageBoxImage.Warning;
+
+            return MessageBox.Show(sMessageBoxText, sCaption, btnMessageBox, icnMessageBox);
         }
     }
 }

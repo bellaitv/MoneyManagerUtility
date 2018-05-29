@@ -10,5 +10,24 @@ namespace MoneyManagerUtility
     {
         public String Title { get; set; }
         public String Description { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            ItemCategory item = obj as ItemCategory;
+            if (item == null)
+                return false;
+            if (!item.Title.Equals(this.Title))
+                return false;
+            if (!item.Description.Equals(this.Description))
+                return false;
+
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            //todo
+            return base.GetHashCode();
+        }
     }
 }
