@@ -1,7 +1,8 @@
 ﻿
 
-FC:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\DialogModifyItem.xaml;;
-FC:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\DialogNew.xaml;;
+FC:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\DialogModifyCostItem.xaml;;
+FC:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\DialogNewCostsWorksheet.xaml;;
 FC:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\DialogSetShoppingItem.xaml;;
 FC:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\MainWindow.xaml;;
+FC:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\DialogNewCostDay.xaml;;
 

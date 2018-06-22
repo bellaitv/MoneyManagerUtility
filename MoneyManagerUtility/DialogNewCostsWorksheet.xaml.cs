@@ -9,7 +9,7 @@ namespace MoneyManagerUtility
     /// <summary>
     /// Interaction logic for DialogNew.xaml
     /// </summary>
-    public partial class DialogNew : Window
+    public partial class DialogNewCostsWorksheet : Window
     {
         public const int MAX_ITEM_COUNT = 20;
 
@@ -19,7 +19,7 @@ namespace MoneyManagerUtility
         private TreeNode head;
         private MainWindow main;
 
-        public DialogNew(ItemReader reader, MainWindow main)
+        public DialogNewCostsWorksheet(ItemReader reader, MainWindow main)
         {
             InitializeComponent();
             this.reader = reader;
@@ -34,7 +34,7 @@ namespace MoneyManagerUtility
             main.SetHead(head);
             main.ClearTheTree();
             main.SetTree(head);
-            Close();
+            DialogResult = true;
         }
 
         private void CancelNew_Click(object sender, RoutedEventArgs e)

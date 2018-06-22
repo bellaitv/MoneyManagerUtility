@@ -43,7 +43,12 @@
                     </TreeViewItem>
                 </TreeView>
             </TabItem>
-            <TabItem Header="Loans" />
+            <TabItem Header="Loans" >
+                <!-- TODO-->
+            </TabItem>
+            <TabItem Header="Savings" >
+                <!-- TODO-->
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

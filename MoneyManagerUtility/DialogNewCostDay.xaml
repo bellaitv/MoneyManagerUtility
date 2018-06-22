@@ -1,0 +1,24 @@
+﻿<Window x:Class="MoneyManagerUtility.DialogNewCostDay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MoneyManagerUtility"
+        mc:Ignorable="d"
+        Title="NewCostDay" Height="166.8" Width="254.4">
+    <Grid Margin="0,0,0.2,-70.2" RenderTransformOrigin="0.413,0.441">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="13*" />
+            <ColumnDefinition Width="48*"/>
+
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="0" Grid.Row="0" Content="Day" Margin="0,0,24,0" />
+        <ComboBox Grid.Column="1" Grid.Row="0" Name="ComboBoxDays" />
+        <Button Click="ApplySetMonths_Click" Content="Apply" Grid.Row="1" Grid.Column="0" Height="50" Width="50" Margin="-7,27,9.8,26.2"/>
+        <Button Click="CalcelSetMonths_Click" Content="Cancel" Grid.Row="1" Grid.Column="1" Height="50" Width="50" Margin="0.2,26.6,145,24.2" />
+    </Grid>
+</Window>

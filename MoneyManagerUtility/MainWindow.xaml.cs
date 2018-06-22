@@ -123,7 +123,17 @@ namespace MoneyManagerUtility
             }
             else
             {
-                //todo add new Day dialog
+                DialogNewCostDay dialog = new DialogNewCostDay(node.Title, reader);
+                Nullable<bool> result = dialog.ShowDialog();
+                if (result == true)
+                {
+                    NodeItem newNode = dialog.GetItem();
+                    newItem.Tag = newNode;
+                    newItem.Header = newNode.Value;
+                    node.children.Add(newNode);
+                    parent.Items.Add(newItem);
+                    TreeItemViewMain.Items.Refresh();
+                }
             }
         }
 
@@ -135,7 +145,7 @@ namespace MoneyManagerUtility
             NodeItem node = item.Tag as NodeItem;
             if (node == null)
                 return;
-            DialogModifyItem dialog = new DialogModifyItem(node, reader);
+            DialogModifyCostItem dialog = new DialogModifyCostItem(node, reader);
             dialog.ShowDialog();
             item.IsExpanded = true;
             item.Header = String.Format("{0}{1}{2}", node.Title, END_TITLE_SIGN, node.Value, End_VALUE_SIGN, node.Description);
@@ -231,7 +241,7 @@ namespace MoneyManagerUtility
 
         private void New_Click(object sender, RoutedEventArgs e)
         {
-            DialogNew newDialog = new DialogNew(reader, this);
+            DialogNewCostsWorksheet newDialog = new DialogNewCostsWorksheet(reader, this);
             newDialog.ShowDialog();
         }
 

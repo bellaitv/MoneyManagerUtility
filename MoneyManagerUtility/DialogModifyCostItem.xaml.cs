@@ -17,18 +17,18 @@ namespace MoneyManagerUtility
     /// <summary>
     /// Interaction logic for DialogModifyItem.xaml
     /// </summary>
-    public partial class DialogModifyItem : Window
+    public partial class DialogModifyCostItem : Window
     {
         private NodeItem item;
         private ItemReader reader;
 
-        public DialogModifyItem()
+        public DialogModifyCostItem()
         {
             InitializeComponent();
             SetCategiies();
         }
 
-        public DialogModifyItem(NodeItem item, ItemReader reader)
+        public DialogModifyCostItem(NodeItem item, ItemReader reader)
         {
             this.item = item;
             this.reader = reader;
@@ -85,7 +85,7 @@ namespace MoneyManagerUtility
             String value = String.Format("{0}{1}{2}", TextBoxAmount.Text.ToString(), StringResources.asd, TextBoxComment.Text.ToString());
             item.Value = value;
             item.Description = value;
-            Close();
+            DialogResult = true;
         }
 
         private bool FormIsValid()

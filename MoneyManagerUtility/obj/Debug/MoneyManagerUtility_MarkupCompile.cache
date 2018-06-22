@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\App.xaml
-41259522097
+5-1166269779
 
-22-1262979945
+23-377699596
 14-918601105
-DialogModifyItem.xaml;DialogNew.xaml;DialogSetShoppingItem.xaml;MainWindow.xaml;
+DialogModifyCostItem.xaml;DialogNewCostsWorksheet.xaml;DialogSetShoppingItem.xaml;MainWindow.xaml;DialogNewCostDay.xaml;
 
 False
 

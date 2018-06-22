@@ -55,7 +55,7 @@ namespace MoneyManagerUtility
             String value = String.Format("{0}{1}{2}", TextBoxAmount.Text.ToString(),StringResources.asd, TextBoxComment.Text.ToString());
             item.Value = value;
             item.Description = value;
-            Close();
+            DialogResult = true;
         }
 
         private void CalcelSetMonths_Click(object sender, RoutedEventArgs e)

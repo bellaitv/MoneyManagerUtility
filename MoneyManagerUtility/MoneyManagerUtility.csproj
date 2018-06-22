@@ -57,11 +57,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DialogModifyItem.xaml.cs">
-      <DependentUpon>DialogModifyItem.xaml</DependentUpon>
+    <Compile Include="DialogModifyCostItem.xaml.cs">
+      <DependentUpon>DialogModifyCostItem.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DialogNew.xaml.cs">
-      <DependentUpon>DialogNew.xaml</DependentUpon>
+    <Compile Include="DialogNewCostsWorksheet.xaml.cs">
+      <DependentUpon>DialogNewCostsWorksheet.xaml</DependentUpon>
     </Compile>
     <Compile Include="DialogSetShoppingItem.xaml.cs">
       <DependentUpon>DialogSetShoppingItem.xaml</DependentUpon>
@@ -73,16 +73,19 @@
     <Compile Include="Item.cs" />
     <Compile Include="ItemReader.cs" />
     <Compile Include="Months.cs" />
+    <Compile Include="DialogNewCostDay.xaml.cs">
+      <DependentUpon>DialogNewCostDay.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NodeItem.cs" />
     <Compile Include="ItemCategory.cs" />
     <Compile Include="StringResources.cs" />
     <Compile Include="TreeNode.cs" />
     <Compile Include="SaveFileManager.cs" />
-    <Page Include="DialogModifyItem.xaml">
+    <Page Include="DialogModifyCostItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DialogNew.xaml">
+    <Page Include="DialogNewCostsWorksheet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -104,6 +107,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="DialogNewCostDay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
