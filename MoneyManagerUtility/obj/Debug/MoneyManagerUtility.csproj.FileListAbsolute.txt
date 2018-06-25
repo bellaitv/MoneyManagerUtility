@@ -24,3 +24,5 @@ C:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\obj\Debug\DialogNewCost
 C:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\obj\Debug\DialogModifyCostItem.baml
 C:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\obj\Debug\DialogNewCostsWorksheet.baml
 C:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\obj\Debug\DialogNewCostDay.baml
+C:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\obj\Debug\DialogNewMonth.g.cs
+C:\_VS_WORKSPACE\MoneyManagerUtility\MoneyManagerUtility\obj\Debug\DialogNewMonth.baml

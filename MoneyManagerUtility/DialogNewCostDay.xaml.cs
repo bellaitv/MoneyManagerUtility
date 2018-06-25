@@ -2,7 +2,6 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows;
 using System.Collections.ObjectModel;
 
 namespace MoneyManagerUtility
@@ -32,6 +31,15 @@ namespace MoneyManagerUtility
 
         private void InitializeList()
         {
+            int mount = Months.WhichMonth(parentTitle);
+            int to = 0;
+            if (mount == 1)
+                //TODO szökőév?
+                to = 29;
+            else if (mount == 0 || mount == 2 || mount == 4 || mount == 6 || mount == 7 || mount == 9 || mount == 11)
+                to = 32;
+            else
+                to = 31;
             for (int i = 1; i < 32; i++)
                 days.Add(i);
             ComboBoxDays.ItemsSource = days;

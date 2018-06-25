@@ -10,6 +10,11 @@ namespace MoneyManagerUtility
 
         public String Value { get; set; }
 
+        public NodeItem(TreeNode parent,ItemReader reader) : base(parent)
+        {
+            this.reader = reader;
+        }
+
         public NodeItem(ItemReader reader)
         {
             this.reader = reader;

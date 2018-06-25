@@ -57,11 +57,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Dialog.cs" />
     <Compile Include="DialogModifyCostItem.xaml.cs">
       <DependentUpon>DialogModifyCostItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="DialogNewCostsWorksheet.xaml.cs">
       <DependentUpon>DialogNewCostsWorksheet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DialogNewMonth.xaml.cs">
+      <DependentUpon>DialogNewMonth.xaml</DependentUpon>
     </Compile>
     <Compile Include="DialogSetShoppingItem.xaml.cs">
       <DependentUpon>DialogSetShoppingItem.xaml</DependentUpon>
@@ -86,6 +90,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DialogNewCostsWorksheet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DialogNewMonth.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

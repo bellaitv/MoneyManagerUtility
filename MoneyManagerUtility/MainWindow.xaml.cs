@@ -98,43 +98,67 @@ namespace MoneyManagerUtility
 
         private void AddItem_Click(object sender, MouseButtonEventArgs e)
         {
-            //parent??
-            TreeViewItem parent = ((TreeViewItem)sender);
-            TreeNode node = parent.Tag as TreeNode;
-            NodeItem nodeItem = node as NodeItem;
-            if (nodeItem != null)
+            TreeViewItem actual = sender as TreeViewItem;
+            if (actual == null)
+                return;
+            TreeViewItem parent = ItemsControl.ItemsControlFromItemContainer(actual) as TreeViewItem;
+            if (parent == null)
+                return;
+            TreeNode node = actual.Tag as TreeNode;
+            TreeNode parentNode = node.parent;
+            if (parentNode == null)
                 return;
             int day = -1;
+            //NodeItem nodeItem = node as NodeItem;
+            //if (nodeItem == null)
+            //    return;
             TreeViewItem newItem = new TreeViewItem();
-            if (Int32.TryParse(node.Title.ToString(), out day))
+            if (!Int32.TryParse(node.Title.ToString(), out day) && !Months.IsMonth(node.Title))
             {
-                //todo add new item dialog
+                //new item
                 DialogSetShoppingItem dialog = new DialogSetShoppingItem(reader);
                 Nullable<bool> result = dialog.ShowDialog();
                 if (result == true)
-                {
-                    NodeItem newNode = dialog.GetItem();
-                    newItem.Tag = newNode;
-                    newItem.Header = String.Format("{0}{1}{2}", newNode.Title, END_TITLE_SIGN, newNode.Value, End_VALUE_SIGN, newNode.Description);
-                    node.children.Add(newNode);
-                    parent.Items.Add(newItem);
-                    TreeItemViewMain.Items.Refresh();
-                }
+                    AddNewNode(dialog.GetItem(), newItem, parentNode, parent);
             }
-            else
+            else if (!Months.IsMonth(node.Title))
             {
+                //new day
                 DialogNewCostDay dialog = new DialogNewCostDay(node.Title, reader);
                 Nullable<bool> result = dialog.ShowDialog();
                 if (result == true)
+                    AddNewNode(dialog.GetItem(), newItem, parentNode, parent);
+            }
+            else
+            {
+                //new month
+                DialogNewMonth dialog = new DialogNewMonth(head.children, parentNode);
+                Nullable<bool> result = dialog.ShowDialog();
+                if (result == true)
+                // AddNewNode(dialog.GetItem(), newItem, parentNode, parent);                
                 {
-                    NodeItem newNode = dialog.GetItem();
+                    var newNode = dialog.GetItem();
                     newItem.Tag = newNode;
-                    newItem.Header = newNode.Value;
-                    node.children.Add(newNode);
+                    newItem.Header = newNode.Title;
+                    parentNode.children.Add(newNode);
                     parent.Items.Add(newItem);
+                    newItem.MouseRightButtonDown += AddItem_Click;
+                    newItem.MouseDoubleClick += TreeNodeItem_DoubleClick;
                     TreeItemViewMain.Items.Refresh();
                 }
             }
+            e.Handled = true;
+        }
+
+        private void AddNewNode(NodeItem newNode, TreeViewItem newItem, TreeNode parentNode, TreeViewItem parent)
+        {
+            newItem.Tag = newNode;
+            newItem.Header = newNode.Value;
+            parentNode.children.Add(newNode);
+            parent.Items.Add(newItem);
+            newItem.MouseRightButtonDown += AddItem_Click;
+            newItem.MouseDoubleClick += TreeNodeItem_DoubleClick;
+            TreeItemViewMain.Items.Refresh();
         }
 
         private void TreeNodeItem_DoubleClick(object sender, MouseButtonEventArgs e)

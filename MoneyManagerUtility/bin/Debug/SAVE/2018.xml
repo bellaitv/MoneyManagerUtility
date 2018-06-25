@@ -2,6 +2,7 @@
 <month value="MAJ">
 <day value="4">
 <shoppin_item  category="oyster" value="50 session" description="50 session"/>
+<shoppin_item  category="food" value="40 test" description="40 test"/>
 </day>
 </month>
 </year>

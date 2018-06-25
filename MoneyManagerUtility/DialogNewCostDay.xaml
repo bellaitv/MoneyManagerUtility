@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MoneyManagerUtility"
         mc:Ignorable="d"
-        Title="NewCostDay" Height="166.8" Width="254.4">
+        Title="NewCostDay" Height="166.8" Width="248.258">
     <Grid Margin="0,0,0.2,-70.2" RenderTransformOrigin="0.413,0.441">
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />

@@ -17,7 +17,7 @@ namespace MoneyManagerUtility.Import
         {
             this.reader = reader;
             this.filePath = filePath;
-            head = new TreeNode() { children = new List<TreeNode>() };
+            head = new TreeNode(null) { children = new List<TreeNode>() };
         }
 
         public String Title { get; private set; }
@@ -41,16 +41,16 @@ namespace MoneyManagerUtility.Import
             List<TreeNode> monhtsList = new List<TreeNode>();
             foreach (XmlNode month in months)
             {
-                TreeNode monthNode = new TreeNode() { Title = month.Attributes[0].Value, children = new List<TreeNode>() };
+                TreeNode monthNode = new TreeNode(head) { Title = month.Attributes[0].Value, children = new List<TreeNode>() };
                 head.children.Add(monthNode);
                 lastMonth = monthNode;
                 foreach (XmlNode day in month.ChildNodes)
                 {
-                    TreeNode dayNode = new TreeNode() { Title = day.Attributes[0].Value, children = new List<TreeNode>() };
+                    TreeNode dayNode = new TreeNode(monthNode) { Title = day.Attributes[0].Value, children = new List<TreeNode>() };
                     monthNode.children.Add(dayNode);
                     foreach (XmlNode shoppingItem in day.ChildNodes)
                     {
-                        NodeItem shoppingItemNode = new NodeItem(reader) { Title = shoppingItem.Attributes[0].Value, Value = shoppingItem.Attributes[1].Value, Description = shoppingItem.Attributes[2].Value, children = new List<TreeNode>() };
+                        NodeItem shoppingItemNode = new NodeItem(dayNode, reader) { Title = shoppingItem.Attributes[0].Value, Value = shoppingItem.Attributes[1].Value, Description = shoppingItem.Attributes[2].Value, children = new List<TreeNode>() };
                         dayNode.children.Add(shoppingItemNode);
                     }
                 }

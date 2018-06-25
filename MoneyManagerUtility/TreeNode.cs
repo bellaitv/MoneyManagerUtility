@@ -6,6 +6,14 @@ namespace MoneyManagerUtility
 {
     public class TreeNode
     {
+        public TreeNode()
+        {
+        }
+
+        public TreeNode(TreeNode parent) {
+            this.parent = parent;
+        }
+
         public String Title { get; set; }
 
         public TreeNode parent { get; set; }
